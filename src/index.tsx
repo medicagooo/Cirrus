@@ -2193,7 +2193,7 @@ function DriveApp({
           </label>
           <label>
             <span>新密码</span>
-            <input id="profile-new-password" type="password" autocomplete="new-password" placeholder="至少 8 位，留空则不修改" />
+            <input id="profile-new-password" type="password" autocomplete="new-password" placeholder="至少 6 位，留空则不修改" />
           </label>
           <label>
             <span>确认新密码</span>
@@ -4262,8 +4262,8 @@ const clientScript = String.raw`
         profileStatus.value = "两次输入的新密码不一致";
         return;
       }
-      if (profileNewPassword.value.length < 8) {
-        profileStatus.value = "新密码至少需要 8 位";
+      if (profileNewPassword.value.length < 6) {
+        profileStatus.value = "新密码至少需要 6 位";
         return;
       }
       if (!profileCurrentPassword.value) {

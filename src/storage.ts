@@ -1085,7 +1085,7 @@ export async function hashUserPassword(user: string, password: string) {
   const normalizedUser = cleanUserName(user);
   const normalizedPassword = cleanText(password, 512);
   if (!normalizedUser) throw new AppError("用户无效");
-  if (normalizedPassword.length < 8) throw new AppError("密码至少需要 8 位");
+  if (normalizedPassword.length < 6) throw new AppError("密码至少需要 6 位");
   return hashPassword(`user:${normalizedUser}`, normalizedPassword);
 }
 
